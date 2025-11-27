@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 env:
-  IMAGE_NAME: ghcr.io/petple-org/frontend:latest
+  IMAGE_NAME: ghcr.io/petple-org/petple_f:latest
   DEPLOY_PATH: /srv/petple/frontend
 
 jobs:
