@@ -49,12 +49,12 @@ jobs:
             mkdir -p ${{ env.DEPLOY_PATH }}
             cd ${{ env.DEPLOY_PATH }}
 
-            curl -L -o docker-compose.prod.yml https://raw.githubusercontent.com/petple-org/frontend/main/docker-compose.prod.yml
+            curl -L -o docker-compose.yml https://raw.githubusercontent.com/petple-org/frontend/main/docker-compose.prod.yml
 
             echo "${{ secrets.ENV_FILE }}" > .env
 
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker pull ${{ env.IMAGE_NAME }}
 
-            docker-compose -f docker-compose.prod.yml up -d --force-recreate
+            docker compose up -d --force-recreate
             docker image prune -f
