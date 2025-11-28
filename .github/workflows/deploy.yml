@@ -32,6 +32,8 @@ jobs:
           context: .
           push: true
           tags: ${{ env.IMAGE_NAME }}
+          build-args: |
+            VITE_API_BASE_URL=https://petple.duckdns.org
 
   deploy:
     needs: build-and-push
