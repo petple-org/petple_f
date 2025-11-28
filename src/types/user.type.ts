@@ -64,7 +64,7 @@ export type UserType = {
   email: string;
   name: string;
   nickname: string;
-  profileImage: string;
+  profileImage?: string | null;
   jibun_address: string;
   location_coordinates_lat: number;
   location_coordinates_lng: number;

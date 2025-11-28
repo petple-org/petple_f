@@ -63,7 +63,7 @@ const CreatePetProfile = () => {
       return;
     }
 
-    imageUrl = await imageUpload(file);
+    imageUrl = await imageUpload(file, "pets");
 
     try {
       const petId = await createPet(user?.id, petData, imageUrl);

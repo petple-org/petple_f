@@ -75,7 +75,7 @@ const UserProfileForm = () => {
     let imageUrl = user?.profileImage;
 
     if (file) {
-      imageUrl = await imageUpload(file);
+      imageUrl = await imageUpload(file, "profiles");
       if (imageUrl) {
         setUser({ profileImage: imageUrl });
       }
@@ -93,8 +93,8 @@ const UserProfileForm = () => {
 
     if (
       nickName === user?.nickname &&
-      imageUrl === user.profileImage &&
-      JSON.stringify(selectedAddress) === JSON.stringify(user.jibun_address)
+      imageUrl === user?.profileImage &&
+      JSON.stringify(selectedAddress) === JSON.stringify(user?.jibun_address)
     ) {
       setUpdating(false);
       return;

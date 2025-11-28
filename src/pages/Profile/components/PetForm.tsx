@@ -72,7 +72,7 @@ const PetForm: FC<PetInfoProps> = (props) => {
     let imageUrl = previewImg;
     try {
       if (file) {
-        imageUrl = await imageUpload(file);
+        imageUrl = await imageUpload(file, "pets");
       }
       await updatePetInfo(petData, id, imageUrl);
       const updatePetList = user?.pets.map((pet) =>

@@ -34,7 +34,7 @@ const SelectedProfile = () => {
       </Helmet>
       <SelectedProfileForm
         userNickName={nickname!}
-        userImage={user?.profileImage!}
+        userImage={user?.profileImage || ""}
       />
       <div className={style.pet_wrap}>
         <div className={style.pet_div}>
